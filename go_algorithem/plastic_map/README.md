@@ -1,57 +1,47 @@
-# The encryption rules are as follows:
+### Initially, we only have the exact coordinates of the start location. 
+### Then all other points are given to us as a chain from this point. 
 
-## Letter Shifting and Emoticons
-### Each letter or emoji in the message must be shifted forward in the alphabet by the remainder of dividing the Unicode value of that letter by 5.If the shift reaches the end of the alphabet or the range of emoticons, it continues to the beginning.
----
-## Number Substitution
-### Each number in the message must be replaced with its Unicode code and then multiplied by the length of the message itself.
-## For example, if the number 3 is in the message and the length of the message before encryption is 10, the number 3 is replaced with its Unicode code (51) and then multiplied by 10, resulting in 510.
-## The length of the message is the number of characters in it.
----
-## Whitespace Conversion
-### Each whitespace must be converted to the underscore _ by the number of characters in the word before it.
-## For example, if there is a word with 5 letters before the space, that space will be converted to _____.
----
-## Reversing the message
-### The final message after applying all the above rules should be printed in reverse (except for numbers).
----
-## Note: These apply to any message in the same way.
-You need to write a program that takes a message as input, encrypts it according to the above rules, and prints the result.
----
-# Note
-### It is guaranteed that only uppercase and lowercase English letters, numbers, spaces, and emoticons are included in the expressions.
-### First, you receive an integer n, which indicates the number of sentences you are going to receive from the input for encryption.
-### On the next n lines of input, a sentence comes, which can contain uppercase and lowercase letters, numbers, and spaces.
----
+# Now your task is to find the exact coordinates of each location.
+
+## Input
+### The first line contains the start coordinates. The values ​​of x and y, which are integers, are given at the beginning.
+
+### In the following lines, a new location is introduced in each line. First, the name of the new location is given, then the phrase from, and then the name of the location to which x and y are given. In these lines, the values ​​of x and y are always given with a + or - sign.
+
+### For example, in the first example, hospital, its x value is one unit less than the x belonging to start, and its y value is two units more than the y belonging to start.
+
 ## Output
-### Print a string on each line of output that represents the final encrypted message.
+### For each location in the input except start, the exact coordinates of the same location should be printed in the output, observing the order in which they appeared in the input.
 
-# Example
+# Example:
+---
 ## Sample Input 1
 ```
-1
-Hello World 123
+start x=1 y=1
+hospital from start x=-1 y=+2
 ```
+‍‍‍‍‍---
 
 ## Sample Output 1
 ```
-765750735_____dovpY_____poofJ
+hospital x=0 y=3
 ```
----
 
 ## Sample Input 2
 ```
-4
-cCT6gxy
-pzZL7A2RJQiknB8BCEAz😁
-OAtv wTVpq0HndG kHs1
-l2JQAiGsu
+start x=1 y=1
+office from hospital x=+4 y=-1
+hospital from start x=-1 y=+2
 ```
-
+‍‍‍‍‍‍‍‍‍
 ## Sample Output 2
 ```
-zxj378XEg
-😄bAIEC1176CnmiRNT1050A1155MZbr
-980sJm__________HdnJ960trWXa____yuAS
-wsHiARN450o
+office x=4 y=2
+hospital x=0 y=3
 ```
+
+## More Tips
+The order of display of locations in the output must be exactly the same as the order of the input (except start, which does not need to be displayed).
+A solution is guaranteed to exist.
+Each location name is guaranteed to be unique and consist of lowercase English letters and numbers, and a new location is described after the first line.
+The total number of locations is guaranteed to be as follows.
