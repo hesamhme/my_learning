@@ -16,7 +16,8 @@ Given a list of restaurants with their average preparation times and a list of o
 - **Next `n` Lines:** Each line contains a restaurant name (which may include spaces) and its average preparation time in minutes.
 
 ```
-kababi haj ali 30 sushi express 45
+kababi haj ali 30
+sushi express 45
 ```
 - **Next Line:** An integer `m` (100 ≤ m ≤ 1000), the number of orders for that day.
 - **Next `m` Lines:** Each line contains order information in one of the following formats:
@@ -50,7 +51,13 @@ kababi haj ali 30 sushi express 45
 
 ## Sample Input 1
 ```
-2 kababi haj ali 30 sushi express 45 2 kababi haj ali 10:25 11:15 Gholi Zahra 14:17 14:50 sushi express kababi haj ali
+2
+kababi haj ali 30
+sushi express 45
+2
+kababi haj ali 10:25 11:15 Gholi
+Zahra 14:17 14:50 sushi express
+kababi haj ali
 ```
 ## Sample output 1
 
@@ -71,7 +78,16 @@ kababi haj ali 30 sushi express 45
 
 ## Sample Input 2
 ```
-3 burger king 25 pizza hut 30 taco bell 20 4 burger king 12:00 12:45 Alice Bob 13:40 13:10 pizza hut taco bell 11:50 12:30 Charlie Diana 14:35 14:00 burger king overlap
+3
+burger king 25
+pizza hut 30
+taco bell 20
+4
+burger king 12:00 12:45 Alice
+Bob 13:40 13:10 pizza hut
+taco bell 11:50 12:30 Charlie
+Diana 14:35 14:00 burger king
+overlap
 ```
 ## Sample output 2
 ```
