@@ -26,5 +26,16 @@ class Bird(Animal):
     def make_sound(self):
         print(f"{self.sound} and flaps wings")
 
+
 lion = Animal("Simba", "Lion", 5, "Roar")
 print(lion.name, lion.species, lion.age, lion.sound)
+lion.make_sound()
+print(lion.info())
+print(lion)
+
+
+parrot = Bird("Polly", "Parrot", 2, "Squawk", 10)
+print(parrot.name, parrot.species, parrot.age, parrot.sound, parrot.wingspan)
+parrot.make_sound()
+print(parrot.info())
+print(parrot)
